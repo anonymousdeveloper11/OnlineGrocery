@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditUserActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_rec"
+        android:padding="10dp"
+
+        >
+        <TextView
+            android:id="@+id/edit_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+        <ImageButton
+            android:id="@+id/edit_bckbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_chevron_left"
+            android:background="@null"
+            ></ImageButton>
+
+        <ImageButton
+            android:id="@+id/edit_gpsbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_gps"
+            android:background="@null"
+            android:layout_alignParentEnd="true"
+            ></ImageButton>
+
+    </RelativeLayout>
+
+    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+        android:id="@+id/profile_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/relativelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_person"
+        app:c_border_color="@color/colorPrimary"
+        app:c_border="true"
+        app:c_border_width="1dp"
+
+        />
+    <EditText
+        android:id="@+id/full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/profile_img"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="5dp"
+        android:hint="Full Name"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp"
+
+        />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/full_name"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="5dp"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:padding="10dp"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/phone"
+        >
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+
+            android:background="@drawable/shape_rec1"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="5dp"
+            android:hint="Country"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:layout_weight="1"
+
+    ></EditText>
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rec1"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="5dp"
+            android:hint="State"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:layout_weight="1"
+
+            ></EditText>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rec1"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="5dp"
+            android:hint="City"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:layout_weight="1"
+
+            ></EditText>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_location"
+        android:drawablePadding="5dp"
+        android:hint="Address"
+        android:inputType="textPostalAddress|textMultiLine"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/layout_linear"
+
+        ></EditText>
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_below="@+id/address"
+        android:layout_centerHorizontal="true"
+        android:text="Update"
+
+        />
+
+</RelativeLayout>

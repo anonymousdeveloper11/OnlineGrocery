@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activities.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_rec"
+        android:padding="10dp"
+
+        >
+        <TextView
+            android:id="@+id/text_register_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register User"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+        <ImageButton
+            android:id="@+id/register_bckbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_chevron_left"
+            android:background="@null"
+            ></ImageButton>
+
+        <ImageButton
+            android:id="@+id/register_gpsbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_gps"
+            android:background="@null"
+            android:layout_alignParentEnd="true"
+            ></ImageButton>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/lockimg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_circle"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_key_white"
+        android:padding="5dp"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        ></ImageView>
+
+
+
+    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+        android:id="@+id/profile_circular"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/lockimg"
+
+        android:layout_centerHorizontal="true"
+        app:c_border="true"
+        app:c_border_color="@color/colorPrimary"
+        app:c_border_width="1dp"
+        android:src="@drawable/ic_person"
+        ></com.blogspot.atifsoftwares.circularimageview.CircularImageView>
+
+    <EditText
+        android:id="@+id/register_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/profile_circular"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_person"
+        android:hint="Full Name"
+        android:drawablePadding="5dp"
+        android:inputType="textPersonName|textCapWords"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/register_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/register_name"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_phone"
+        android:hint="Phone"
+        android:drawablePadding="5dp"
+        android:inputType="phone"
+        ></EditText>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_phone"
+        android:orientation="horizontal"
+        >
+    <EditText
+        android:id="@+id/register_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/register_name"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_location"
+        android:hint="Country"
+        android:drawablePadding="5dp"
+        android:inputType="textPostalAddress"
+        android:layout_weight="1"
+        ></EditText>
+
+        <EditText
+            android:id="@+id/register_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_below="@+id/register_name"
+            android:background="@drawable/shape_rec1"
+            android:drawableStart="@drawable/ic_location"
+            android:hint="State"
+            android:drawablePadding="5dp"
+            android:inputType="textPostalAddress"
+            android:layout_weight="1"
+            ></EditText>
+
+        <EditText
+            android:id="@+id/register_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_below="@+id/register_name"
+            android:background="@drawable/shape_rec1"
+            android:drawableStart="@drawable/ic_location"
+            android:hint="City"
+            android:drawablePadding="5dp"
+            android:inputType="textPostalAddress"
+            android:layout_weight="1"
+
+            ></EditText>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/register_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/linear_layout"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_location"
+        android:hint="Address"
+        android:drawablePadding="5dp"
+        android:inputType="textPostalAddress|textMultiLine"
+        ></EditText>
+
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_address"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:hint="Email"
+        android:drawableStart="@drawable/ic_gray_email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/shape_rec1"
+
+
+        ></EditText>
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_email"
+        android:drawableStart="@drawable/ic_gray_lock"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/shape_rec1"
+
+        ></EditText>
+
+    <EditText
+        android:id="@+id/register_conpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:hint=" Confirm Password"
+        android:drawableStart="@drawable/ic_gray_lock"
+
+        android:inputType="textPassword"
+        android:background="@drawable/shape_rec1"
+
+        ></EditText>
+
+
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_conpassword"
+        android:layout_centerHorizontal="true"
+        android:text="Register"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:minWidth="120dp"
+        ></Button>
+
+    <TextView
+        android:id="@+id/text_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Are you a Seller?Register as Seller"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        ></TextView>
+
+
+
+</RelativeLayout>

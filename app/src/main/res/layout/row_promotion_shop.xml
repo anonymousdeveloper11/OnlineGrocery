@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="3dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    android:layout_marginBottom="1dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@color/colorWhite">
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/promotion"
+            android:layout_marginEnd="5dp"
+            />
+        <TextView
+            android:id="@+id/promoCodeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iconIv"
+            android:text="Promotion Code"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/promoPriceLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iconIv"
+            android:text="Promotion Price: $ "
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/promoCodeTv"
+            />
+        <TextView
+            android:id="@+id/promoPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/promoPriceLabelTv"
+            android:text="31.2"
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/promoCodeTv"
+            />
+        <TextView
+            android:id="@+id/minimumOrderPriceLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iconIv"
+            android:text="Minimum Order  Price: $"
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/promoPriceLabelTv"
+            />
+        <TextView
+            android:id="@+id/minimumOrderPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/minimumOrderPriceLabelTv"
+            android:text="50"
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/promoPriceLabelTv"
+            />
+
+        <TextView
+            android:id="@+id/expireDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iconIv"
+            android:text="dd/MM/yyyy"
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/minimumOrderPriceLabelTv"
+            />
+
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iconIv"
+            android:text="The description of the promotion code, max2 lines"
+            android:maxLines="2"
+            android:textColor="@color/colorBlack"
+            android:layout_below="@+id/expireDateTv"
+            />
+        <ImageView
+            android:id="@+id/nextIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_next"
+            android:layout_centerVertical="true"
+            android:tint="@color/colorPrimary"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

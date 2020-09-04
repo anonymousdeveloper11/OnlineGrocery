@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "589555103948",
+    "firebase_url": "https://online-grocery-572af.firebaseio.com",
+    "project_id": "online-grocery-572af",
+    "storage_bucket": "online-grocery-572af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589555103948:android:0c32e107134e750342aa69",
+        "android_client_info": {
+          "package_name": "com.example.onlinegrocery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589555103948-72o9f462p3v0laldjsa9mbllvtlkovf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinegrocery",
+            "certificate_hash": "431640e044d54fe07df63516402a588d39e10d9c"
+          }
+        },
+        {
+          "client_id": "589555103948-p0ilqgsk78icfl1q8drkm9al0h2thng0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYM_Kz-dodo3bVYGzSaYhCA_cAWoVsQRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589555103948-p0ilqgsk78icfl1q8drkm9al0h2thng0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

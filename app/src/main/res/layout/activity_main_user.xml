@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainUserActivity">
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec"
+        android:padding="10dp"
+
+
+        >
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@+id/profile"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+
+
+        <ImageButton
+            android:id="@+id/user_logoutbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logout"
+            android:background="@null"
+            android:layout_alignParentEnd="true"
+            ></ImageButton>
+
+        <ImageButton
+            android:id="@+id/user_editBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_edit"
+            android:background="@null"
+            android:layout_toStartOf="@+id/user_logoutbtn"
+
+            ></ImageButton>
+
+        <!--notification setting-->
+        <ImageButton
+            android:id="@+id/settingBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_settings"
+            android:layout_toStartOf="@+id/user_editBtn"
+            android:background="@null"/>
+
+
+
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_store"
+            app:c_border_color="@color/colorWhite"
+            app:c_border_width="1dp"
+            app:c_border="true"
+            android:layout_marginEnd="10dp"
+
+            ></com.blogspot.atifsoftwares.circularimageview.CircularImageView>
+
+
+
+        <TextView
+            android:id="@+id/emailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_toEndOf="@id/profile"
+            android:layout_below="@id/user_name"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:layout_toEndOf="@id/profile"
+            android:layout_below="@id/emailTv"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+
+        <!--Tabs: Shops , Orders-->
+        <LinearLayout
+            android:id="@+id/tabLl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/profile"
+            android:background="@drawable/shape_rect03"
+            >
+            <!--shops-->
+            <TextView
+                android:id="@+id/tabShopsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Shops"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/shape_rect04"
+                ></TextView>
+
+            <!--Orders-->
+            <TextView
+                android:id="@+id/tabOrdersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Orders"
+                android:layout_weight="1"
+                android:textColor="@color/colorWhite"
+
+                ></TextView>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <!--shops UI -->
+    <RelativeLayout
+        android:id="@+id/shopsRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shopsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_shop"
+            />
+    </RelativeLayout>
+
+    <!--Orders UI -->
+
+    <RelativeLayout
+        android:id="@+id/ordersRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        >
+        <!--recycleView show orders (newest first)-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_order_user"
+            app:stackFromEnd="true"
+            app:reverseLayout="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
