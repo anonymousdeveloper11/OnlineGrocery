@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activities.ForgotPassActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/shape_rec"
+        android:padding="10dp"
+
+        >
+        <TextView
+            android:id="@+id/text_recover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recover Password"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+        <ImageButton
+            android:id="@+id/backbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_chevron_left"
+            android:background="@null"
+
+            ></ImageButton>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/recover_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_circle"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_key_white"
+        android:padding="5dp"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/recover_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/recover_img"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_email"
+        android:hint="Email"
+        android:drawablePadding="5dp"
+        android:inputType="textEmailAddress"
+        ></EditText>
+
+
+
+
+
+    <Button
+        android:id="@+id/btn_recover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recover_email"
+        android:layout_centerHorizontal="true"
+        android:text="Recover"
+        android:textAllCaps="false"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:minWidth="120dp"
+        ></Button>
+
+
+
+</RelativeLayout>
+
