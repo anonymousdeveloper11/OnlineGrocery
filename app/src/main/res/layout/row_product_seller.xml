@@ -71,19 +71,21 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/originalPriceTv"
+                    android:id="@+id/discountPriceTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
+
                     android:text="$10"
                     android:textColor="@color/cologray2"
 
                     ></TextView>
                 <TextView
-                    android:id="@+id/discountPriceTv"
+                    android:id="@+id/originalPriceTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/originalPriceTv"
+                    android:layout_toEndOf="@+id/discountPriceTv"
+
                     android:text="$20"
                     android:textColor="@color/cologray2"
 

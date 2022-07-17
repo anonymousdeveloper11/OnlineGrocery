@@ -39,11 +39,11 @@
                 android:id="@+id/discountNoteTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:background="@drawable/shape_rec05"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:text="10% OFF"
                 android:textColor="@color/colorGreen"
+                android:layout_alignParentEnd="true"
                 android:textSize="10sp"
 
                 ></TextView>
@@ -78,11 +78,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:text="Add to Cart"
                 android:layout_below="@id/descriptionTv"
+                android:textColor="@color/colorPrimaryDark"
                 android:drawableStart="@drawable/ic_shopping_primary"
                 android:gravity="center_vertical"
-                android:text="Add to Cart"
-                android:textColor="@color/colorPrimaryDark"
 
                 ></TextView>
 
@@ -100,10 +100,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
+
                     android:text="$10"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/cologray2"
 
                     ></TextView>
                 <TextView
@@ -111,10 +110,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/discountPriceTv"
-                    android:textStyle="bold"
-                    android:textSize="17sp"
+
                     android:text="$20"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/cologray2"
 
                     ></TextView>
             </RelativeLayout>

@@ -55,6 +55,7 @@
             android:text="Notifications are disable"
             android:layout_below="@+id/fcmSwitch"
             android:textColor="@color/cologray2"/>
+<<<<<<< HEAD
 
         <View
             android:layout_width="match_parent"
@@ -84,5 +85,12 @@
             app:tint="@color/colorRed"
             android:layout_marginEnd="10dp"/>
 
+=======
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorgray00"
+            android:layout_below="@id/notificationStatusTv"/>
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
     </RelativeLayout>
 </LinearLayout>

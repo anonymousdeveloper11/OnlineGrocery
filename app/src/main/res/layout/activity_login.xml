@@ -43,6 +43,7 @@
         android:id="@+id/login_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_below="@+id/lockimg"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"
@@ -54,11 +55,23 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="10dp"></EditText>
+=======
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/lockimg"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_email"
+        android:hint="Email"
+        android:drawablePadding="5dp"
+        android:inputType="textEmailAddress"
+        ></EditText>
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
     <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_below="@+id/login_email"
@@ -68,6 +81,15 @@
         android:hint="Password"
         android:drawablePadding="10dp"
         android:drawableTint="@color/colorPrimary"
+=======
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:layout_below="@+id/login_email"
+        android:background="@drawable/shape_rec1"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="Password"
+        android:drawablePadding="5dp"
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
         android:inputType="textPassword"
         ></EditText>
 
@@ -89,7 +111,10 @@
         android:layout_below="@+id/login_password"
         android:layout_centerHorizontal="true"
         android:text="Login"
+<<<<<<< HEAD
         android:layout_marginTop="20dp"
+=======
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
         style="@style/Widget.AppCompat.Button.Colored"
         android:minWidth="120dp"
         ></Button>

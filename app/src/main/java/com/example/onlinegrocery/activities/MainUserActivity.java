@@ -283,14 +283,14 @@ public class MainUserActivity extends AppCompatActivity {
                 shopsList.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
                     ModelShop modelShop = ds.getValue(ModelShop.class);
-//                    String shopCity ="" +ds.child("city").getValue();
-//
-//                    //show only user city shops
-//                    if(shopCity.equals(myCity)){
-//                        shopsList.add(modelShop);
-//                    }
+                    String shopCity ="" +ds.child("city").getValue();
+
+                    //show only user city shops
+                    if(shopCity.equals(myCity)){
+                        shopsList.add(modelShop);
+                    }
                     //if you want to display all shops skip the if statement and add this
-                    shopsList.add(modelShop);
+                   // shopsList.add(modelShop);
                 }
                 //setup adapter
                 adapterShop = new AdapterShop(MainUserActivity.this, shopsList);

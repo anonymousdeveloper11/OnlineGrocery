@@ -72,6 +72,7 @@ forgotTv.setOnClickListener(new View.OnClickListener() {
 loginBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+<<<<<<< HEAD
 
                     if(emailEt.getText().toString().trim().equals("admin") && passwordEt.getText().toString().trim().equals("admin")){
                         Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
@@ -81,6 +82,9 @@ loginBtn.setOnClickListener(new View.OnClickListener() {
                         loginUser();
                     }
 
+=======
+                    loginUser();
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 }
             });
 
@@ -90,9 +94,12 @@ loginBtn.setOnClickListener(new View.OnClickListener() {
         private void loginUser() {
             email = emailEt.getText().toString().trim();
             password = passwordEt.getText().toString().trim();
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 Toast.makeText(this, "Invalid email Address ", Toast.LENGTH_SHORT).show();
                 return;

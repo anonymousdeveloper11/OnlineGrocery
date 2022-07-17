@@ -119,16 +119,16 @@
                 android:text="Sub Total:"
                 android:textColor="@color/colorBlack"
                 />
-
             <TextView
                 android:id="@+id/sTotalTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="$10"
                 android:layout_below="@+id/promoRl"
                 android:layout_alignParentEnd="true"
-                android:padding="5dp"
-                android:text="Rs 10"
-                android:textColor="@color/colorBlack" />
+                android:textColor="@color/colorBlack"
+                />
             <!--display promotion Price -->
             <TextView
                 android:id="@+id/discountLabelTv"
@@ -146,7 +146,7 @@
                 android:layout_below="@id/sTotalLabelTv"
                 android:layout_alignParentEnd="true"
                 android:padding="5dp"
-                android:text="Rs 1.2"
+                android:text="$1.2"
                 android:textColor="@color/colorBlack"
                 android:textStyle="bold"/>
 
@@ -164,7 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Rs 08"
+                android:text="$08"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/discountLabelTv"
                 android:textColor="@color/colorBlack"
@@ -184,7 +184,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Rs 18"
+                android:text="$18"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/dFeeLabelTv"
                 android:textColor="@color/colorBlack"

@@ -106,48 +106,19 @@
                 android:inputType="textPersonName|textCapWords"
                 ></EditText>
 
-<!--            <EditText-->
-<!--                android:id="@+id/seller_phone"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/seller_shopname"-->
-<!--                android:layout_marginStart="5dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_marginEnd="5dp"-->
-<!--                android:layout_marginBottom="5dp"-->
-<!--                android:background="@drawable/shape_rec1"-->
-<!--                android:drawableStart="@drawable/ic_phone"-->
-<!--                android:drawablePadding="5dp"-->
-<!--                android:hint="Phone"-->
-<!--                android:inputType="phone"-->
-<!--                android:padding="10dp"></EditText>-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilPhone"
+            <EditText
+                android:id="@+id/seller_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:prefixText="+977"
-                app:counterEnabled="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                app:counterMaxLength="10"
+                android:layout_margin="5dp"
+                android:padding="10dp"
                 android:layout_below="@+id/seller_shopname"
-                app:endIconMode="clear_text"
-                app:helperText="Mandatory*"
-                app:errorEnabled="true"
-                app:helperTextTextColor="@color/colorRed"
-                app:startIconDrawable="@drawable/ic_phone"
-                >
-                <EditText
-                    android:id="@+id/seller_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:maxLength="10"
-                    android:background="@drawable/shape_rec1"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                android:background="@drawable/shape_rec1"
+                android:drawableStart="@drawable/ic_phone"
+                android:hint="Phone"
+                android:drawablePadding="5dp"
+                android:inputType="phone"
+                ></EditText>
 
             <EditText
                 android:id="@+id/seller_deliveryfee"
@@ -155,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding="10dp"
-                android:layout_below="@+id/tilPhone"
+                android:layout_below="@+id/seller_phone"
                 android:background="@drawable/shape_rec1"
                 android:drawableStart="@drawable/ic_shipping"
                 android:hint="Delivery Fee"

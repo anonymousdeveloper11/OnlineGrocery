@@ -9,8 +9,7 @@
     app:cardBackgroundColor="@color/colorWhite">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/orderIdTv"
             android:layout_width="wrap_content"
@@ -34,14 +33,13 @@
             android:text="Email"
             android:layout_below="@+id/orderIdTv"
             android:textColor="@color/colorBlack"/>
-
         <TextView
             android:id="@+id/amountTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Total Amount: $32.11"
             android:layout_below="@+id/emailTv"
-            android:text="Total Amount: Rs 32.11"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:id="@+id/statusTv"

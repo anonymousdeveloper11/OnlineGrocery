@@ -83,7 +83,11 @@ public class EditProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_product);
         //get id of the product from intent
+<<<<<<< HEAD
         productId = getIntent().getStringExtra("productId");
+=======
+        productId = getIntent().getStringExtra(productId);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
         backBtn = findViewById(R.id.backBtn);
         productIconIv = findViewById(R.id.productIconIv);

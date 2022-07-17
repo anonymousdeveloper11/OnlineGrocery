@@ -80,6 +80,7 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
                 //adjust the subtotal after product remove
 
                 double subTotalWithoutDiscount =((ShopDetailsActivity)context).allTotalPrice;
+<<<<<<< HEAD
                 double subTotalAfterProductRemove =subTotalWithoutDiscount - Double.parseDouble(cost.replace("Rs ",""));
                 ((ShopDetailsActivity)context).allTotalPrice = subTotalAfterProductRemove;
 
@@ -87,21 +88,41 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
                 //once subTotal updated check minimumOrderPrice of promoCode
                 double promoPrice = Double.parseDouble(((ShopDetailsActivity)context).promoPrice);
                 double deliveryFee = Double.parseDouble(((ShopDetailsActivity)context).deliveryFee.replace("Rs ",""));
+=======
+                double subTotalAfterProductRemove =subTotalWithoutDiscount - Double.parseDouble(cost.replace("$",""));
+                ((ShopDetailsActivity)context).allTotalPrice = subTotalAfterProductRemove;
+
+                ((ShopDetailsActivity)context).sTotalTv.setText("$"+String.format("%.2f",((ShopDetailsActivity)context).allTotalPrice));
+                //once subTotal updated check minimumOrderPrice of promoCode
+                double promoPrice = Double.parseDouble(((ShopDetailsActivity)context).promoPrice);
+                double deliveryFee = Double.parseDouble(((ShopDetailsActivity)context).deliveryFee.replace("$",""));
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 //check if promo code applied
                 if(((ShopDetailsActivity)context).isPromoCodeApplied){
                     //applied
                     if(subTotalAfterProductRemove<Double.parseDouble(((ShopDetailsActivity)context).promoMinimumOrderPrice)){
                         //current order price is less than minimum required price
+<<<<<<< HEAD
                         Toast.makeText(context, "This code is valid for order with minimum Amount: Rs "+((ShopDetailsActivity)context).promoMinimumOrderPrice
+=======
+                        Toast.makeText(context, "This code is valid for order with minimum Amount: $"+((ShopDetailsActivity)context).promoMinimumOrderPrice
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                                 , Toast.LENGTH_SHORT).show();
 
                         ((ShopDetailsActivity)context).applyBtn.setVisibility(View.GONE);
                         ((ShopDetailsActivity)context).promoDescriptionTv.setVisibility(View.GONE);
                         ((ShopDetailsActivity)context).promoDescriptionTv.setText("");
+<<<<<<< HEAD
                         ((ShopDetailsActivity)context).discountTv.setText("Rs 0");
                         ((ShopDetailsActivity)context).isPromoCodeApplied= false;
                         //show new net total after delivery fee
                         ((ShopDetailsActivity)context).allTotalPriceTv.setText("Rs "+String.format("%.2f",Double.parseDouble(String.format("%.2f", subTotalAfterProductRemove + deliveryFee))));
+=======
+                        ((ShopDetailsActivity)context).discountTv.setText("$0");
+                        ((ShopDetailsActivity)context).isPromoCodeApplied= false;
+                        //show new net total after delivery fee
+                        ((ShopDetailsActivity)context).allTotalPriceTv.setText("$"+String.format("%.2f",Double.parseDouble(String.format("%.2f", subTotalAfterProductRemove + deliveryFee))));
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
 
                     } else {
@@ -110,13 +131,21 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
                         ((ShopDetailsActivity)context).promoDescriptionTv.setText(((ShopDetailsActivity)context).promoDescription);
                         //so new total price after adding deliveryFee and Subtracting with promoPrice
                         ((ShopDetailsActivity)context).isPromoCodeApplied = true;
+<<<<<<< HEAD
                         ((ShopDetailsActivity)context).allTotalPriceTv.setText("Rs " +String.format("%.2f",Double.parseDouble(String.format("%.2f",subTotalAfterProductRemove + deliveryFee - promoPrice))));
+=======
+                        ((ShopDetailsActivity)context).allTotalPriceTv.setText("$" +String.format("%.2f",Double.parseDouble(String.format("%.2f",subTotalAfterProductRemove + deliveryFee - promoPrice))));
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
                     }
 
                 } else {
                     //not applied
+<<<<<<< HEAD
                     ((ShopDetailsActivity)context).allTotalPriceTv.setText("Rs " +String.format("%.2f",Double.parseDouble(String.format("%.2f", subTotalAfterProductRemove + deliveryFee))));
+=======
+                    ((ShopDetailsActivity)context).allTotalPriceTv.setText("$" +String.format("%.2f",Double.parseDouble(String.format("%.2f", subTotalAfterProductRemove + deliveryFee))));
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 }
 
                 //after removing item from cart , update cart count

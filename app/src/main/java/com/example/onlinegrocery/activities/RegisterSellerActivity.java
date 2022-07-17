@@ -178,13 +178,10 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
         if (TextUtils.isEmpty(deliveryFee)){
             Toast.makeText(this, "Please Enter delivery fee..", Toast.LENGTH_SHORT).show();
         }
-//        if(longitude==0.0 || latitude==0.0){
-//            Toast.makeText(this, "Please tap GPS button to detect", Toast.LENGTH_SHORT).show();
-//            return;
-//
-//        }
-        if(phoneNumber.length() < 10){
-            Toast.makeText(this, "Please enter 10 digit phone Number", Toast.LENGTH_SHORT).show();
+        if(longitude==0.0 || latitude==0.0){
+            Toast.makeText(this, "Please tap GPS button to detect", Toast.LENGTH_SHORT).show();
+            return;
+
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -437,7 +434,6 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,this);
 
-      //  findAddress();
     }
     private void findAddress() {
         //find country address state city

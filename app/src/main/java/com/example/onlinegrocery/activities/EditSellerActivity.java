@@ -98,7 +98,10 @@ public class EditSellerActivity extends AppCompatActivity implements LocationLis
         shopNameEt = findViewById(R.id.shopName);
         deliveryFeeEt = findViewById(R.id.deliveryFee);
 
+<<<<<<< HEAD
         firebaseAuth = FirebaseAuth.getInstance();
+=======
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
         //init permission array
         locationPermission = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
         cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};

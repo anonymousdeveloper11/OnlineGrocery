@@ -82,23 +82,21 @@ public class ShopReviewsActivity extends AppCompatActivity {
 
                 ratingSum=0;
                 for(DataSnapshot ds: dataSnapshot.getChildren());
-                if(dataSnapshot.child("rating").getValue() != null) {
-                    float rating = Float.parseFloat("" + dataSnapshot.child("rating").getValue());
+                float rating = Float.parseFloat(""+dataSnapshot.child("rating").getValue());
+                ratingSum = ratingSum+rating;//for avg rating add(additionalof)all ratings , laate will divide it by number of reviews
+                ModelReview modelReview = dataSnapshot.getValue(ModelReview.class);
+                reviewList.add(modelReview);
+                //setup adapter
 
-                    ratingSum = ratingSum + rating;//for avg rating add(additionalof)all ratings , laate will divide it by number of reviews
-                    ModelReview modelReview = dataSnapshot.getValue(ModelReview.class);
-                    reviewList.add(modelReview);
-                    //setup adapter
+                adapterReview = new AdapterReview(ShopReviewsActivity.this, reviewList);
+                //set to recycleView
 
-                    adapterReview = new AdapterReview(ShopReviewsActivity.this, reviewList);
-                    //set to recycleView
+                reviewsRv.setAdapter(adapterReview);
+                Long numberOfReviews = dataSnapshot.getChildrenCount();
+                float avgRating = ratingSum/numberOfReviews;
+                ratingsTv.setText(String.format("%.2f", avgRating)+ "["+numberOfReviews+"]");//eg.4.7[10]
+                ratingBar.setRating(avgRating);
 
-                    reviewsRv.setAdapter(adapterReview);
-                    Long numberOfReviews = dataSnapshot.getChildrenCount();
-                    float avgRating = ratingSum / numberOfReviews;
-                    ratingsTv.setText(String.format("%.2f", avgRating) + "[" + numberOfReviews + "]");//eg.4.7[10]
-                    ratingBar.setRating(avgRating);
-                }
             }
 
 

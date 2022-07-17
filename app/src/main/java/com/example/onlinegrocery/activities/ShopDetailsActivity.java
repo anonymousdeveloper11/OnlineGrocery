@@ -123,14 +123,14 @@ public class ShopDetailsActivity extends AppCompatActivity {
         shopUid = getIntent().getStringExtra("shopUid");
         firebaseAuth = FirebaseAuth.getInstance();
 
-        progressDialog = new ProgressDialog(this);
+        ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait..");
         progressDialog.setCanceledOnTouchOutside(false);
         loadMyInfo();
         loadShopDetails();
         loadShopProducts();
 
-        //loadReviews();//avg rating, set on rating bar
+        loadReviews();//avg rating, set on rating bar
 
          easyDB = EasyDB.init(this,"ITEMS_DB")
                 .setTableName("ITEMS_TABLE")
@@ -615,7 +615,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
     private void checkMinimumOrderPrice() {
         //each promo Code have minimum Order price requirement, if order price is less than required then don't allow to apply code
         if(Double.parseDouble(String.format("%.2f", allTotalPrice))< Double.parseDouble(promoMinimumOrderPrice)){
-            Toast.makeText(this, "The code is valid for order with minimum amount: Rs" +promoMinimumOrderPrice, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "The code is valid for order with minimum amount: $" +promoMinimumOrderPrice, Toast.LENGTH_SHORT).show();
         applyBtn.setVisibility(View.GONE);
         promoDescriptionTv.setVisibility(View.GONE);
         promoDescriptionTv.setText("");
@@ -628,19 +628,18 @@ public class ShopDetailsActivity extends AppCompatActivity {
         }
     }
     private void priceWithDiscount(){
-        discountTv.setText("Rs "+ promoPrice);
-        dFeeTv.setText("Rs "+dFeeTv);
-        sTotalTv.setText("Rs " +String.format("%.2f", allTotalPrice));
-        allTotalPriceTv.setText("$"+(allTotalPrice + Double.parseDouble(deliveryFee. replace("Rs", "")) - Double.parseDouble(promoPrice)));
+        discountTv.setText("$"+ promoPrice);
+        dFeeTv.setText("$"+dFeeTv);
+        sTotalTv.setText("$" +String.format("%.2f", allTotalPrice));
+        allTotalPriceTv.setText("$"+(allTotalPrice + Double.parseDouble(deliveryFee. replace("$", "")) - Double.parseDouble(promoPrice)));
     }
 
     private void priceWithoutDiscount() {
-        discountTv.setText("Rs 0");
-        dFeeTv.setText("Rs "+deliveryFee);
-        sTotalTv.setText("Rs " +String.format("%.2f", allTotalPrice));
-        if(allTotalPrice != 0) {
-            allTotalPriceTv.setText("Rs" + (allTotalPrice + Double.parseDouble(deliveryFee.replace("Rs", ""))));
-        }
+        discountTv.setText("$0");
+        dFeeTv.setText("$"+deliveryFee);
+        sTotalTv.setText("$" +String.format("%.2f", allTotalPrice));
+        allTotalPriceTv.setText("$" +(allTotalPrice + Double.parseDouble(deliveryFee.replace("$",""))));
+
     }
 
     private void submitOrder() {
@@ -649,7 +648,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
         //for order id and order Time
 
         final String timestamp =""+System.currentTimeMillis();
-        String cost = allTotalPriceTv.getText().toString().trim().replace("Rs ","");//remove $ if contains
+        String cost = allTotalPriceTv.getText().toString().trim().replace("$","");//remove $ if contains
 
         //setup order data
         final HashMap<String, String> hashMap = new HashMap<>();
@@ -772,12 +771,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
                 //set data
                 shopNameTv.setText(shopName);
                 emailTv.setText(shopEmail);
-                if(deliveryFee.contains("null")){
-                    deliveryFeeTv.setText("Rs 0");
-                }else {
-                    deliveryFeeTv.setText("Rs "+deliveryFee);
-
-                }
+                deliveryFeeTv.setText("$"+deliveryFee);
                 addressTv.setText(shopAddress);
                 phoneTv.setText(shopPhone);
                 if(shopOpen.equals("true")){

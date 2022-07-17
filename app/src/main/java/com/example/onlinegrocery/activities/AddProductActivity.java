@@ -265,6 +265,7 @@ public class AddProductActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     //image uploaded
                     //get url of upload image
+<<<<<<< HEAD
                     storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
@@ -347,6 +348,48 @@ public class AddProductActivity extends AppCompatActivity {
 //                        });
 
                   //  }
+=======
+                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                    Uri downloadImageUri = uriTask.getResult();
+                    while (!uriTask.isSuccessful()){
+                        //url of image received ,upload to db
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("productId",""+timestamp);
+                        hashMap.put("productTitle",""+productTitle);
+                        hashMap.put("productDescription",""+productDescription);
+                        hashMap.put("productCategory",""+productCategory);
+                        hashMap.put("productQuantity",""+productQuantity);
+                        hashMap.put("productIcon",""+downloadImageUri);
+                        hashMap.put("originalPrice",""+originalPrice);
+                        hashMap.put("discountPrice",""+discountPrice);
+                        hashMap.put("discountNote",""+discountNote);
+                        hashMap.put("discountAvailable",""+discountAvailable);
+                        hashMap.put("timestamp",""+timestamp);
+                        hashMap.put("uid",""+firebaseAuth.getUid());
+                        //add to db
+
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                        reference.child(firebaseAuth.getUid()).child("Products").child(timestamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                //add to db
+                                progressDialog.dismiss();
+                                Toast.makeText(AddProductActivity.this, "Product added", Toast.LENGTH_SHORT).show();
+
+                                clearData();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                //failed to adding in db
+                                progressDialog.dismiss();
+                                Toast.makeText(AddProductActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
+                    }
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override

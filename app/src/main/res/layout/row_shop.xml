@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="1dp"
     app:cardElevation="3dp"
@@ -9,17 +9,16 @@
     >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-
+        android:layout_height="wrap_content">
         <com.blogspot.atifsoftwares.circularimageview.CircularImageView
             android:id="@+id/shopIv"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/store"
+            android:src="@drawable/ic_store"
             app:c_border="true"
+            app:c_border_width="1dp"
             app:c_border_color="@color/cologray2"
-            app:c_border_width="1dp"></com.blogspot.atifsoftwares.circularimageview.CircularImageView>
+            ></com.blogspot.atifsoftwares.circularimageview.CircularImageView>
         <!--online / oofLine status -->
         <ImageView
             android:id="@+id/onlineIv"

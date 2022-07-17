@@ -68,6 +68,7 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
 
         //set data
         holder.titleTv.setText(productTitle);
+<<<<<<< HEAD
         holder.discountNoteTv.setText(discountNote+"% OFF");
         holder.descriptionTv.setText(productDescription);
         holder.originalPriceTv.setText("Rs "+originalPrice);
@@ -76,6 +77,14 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
         holder.discountPriceTv.setText("Rs "+dis);
 
         if(discountAvailable.equals("true") && !discountNote.isEmpty()){
+=======
+        holder.discountNoteTv.setText(discountNote);
+        holder.descriptionTv.setText(productDescription);
+        holder.originalPriceTv.setText("$"+originalPrice);
+        holder.discountPriceTv.setText("$"+discountPrice);
+
+        if(discountAvailable.equals("true")){
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
             //product is on discount
             holder.discountPriceTv.setVisibility(View.VISIBLE);
             holder.discountNoteTv.setVisibility(View.VISIBLE);
@@ -142,7 +151,11 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
         final String price;
         if(modelProduct.getDiscountAvailable().equals("true")){
             //product have discount
+<<<<<<< HEAD
             price = String.valueOf(Integer.parseInt(modelProduct.getOriginalPrice())- Integer.parseInt(modelProduct.getDiscountPrice()));
+=======
+            price = modelProduct.getDiscountPrice();
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
             discountNoteTv.setVisibility(view.VISIBLE);
             originalPriceTv.setPaintFlags(originalPriceTv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
@@ -152,8 +165,13 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
             priceDiscountTv.setVisibility(view.GONE);
             price = modelProduct.getOriginalPrice();
         }
+<<<<<<< HEAD
         cost = Double.parseDouble(price.replaceAll("Rs " , ""));
         finalCost= Double.parseDouble(price.replaceAll("Rs ",""));
+=======
+        cost = Double.parseDouble(price.replaceAll("$", ""));
+        finalCost= Double.parseDouble(price.replaceAll("$",""));
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
         quantity=1;
 
         //dialog
@@ -173,10 +191,16 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
         descriptionTv.setText(""+description);
         discountNoteTv.setText(""+discountNote);
         quantityTv.setText(""+quantity);
+<<<<<<< HEAD
         int  dis = Integer.parseInt(modelProduct.getOriginalPrice()) - Integer.parseInt(modelProduct.getDiscountPrice());
         originalPriceTv.setText("Rs"+modelProduct.getOriginalPrice());
         priceDiscountTv.setText("Rs"+dis);
         finalPrice.setText("Rs "+dis);
+=======
+        originalPriceTv.setText("$"+modelProduct.getOriginalPrice());
+        priceDiscountTv.setText("$"+modelProduct.getDiscountPrice());
+        finalPrice.setText("$"+finalCost);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
         final AlertDialog dialog = builder.create();
         dialog.show();
@@ -188,7 +212,11 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
             public void onClick(View v) {
                 finalCost = finalCost + cost;
                 quantity ++;
+<<<<<<< HEAD
                 finalPrice.setText("Rs "+finalCost);
+=======
+                finalPrice.setText("$"+finalCost);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 quantityTv.setText(""+quantity);
 
             }
@@ -202,7 +230,11 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
                 if(quantity>1){
                     finalCost = finalCost-cost;
                     quantity --;
+<<<<<<< HEAD
                     finalPrice.setText("Rs"+finalCost);
+=======
+                    finalPrice.setText("$"+finalCost);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                     quantityTv.setText(""+quantity);
                 }
             }
@@ -211,6 +243,7 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
 //                String title = titleTv.getText().toString().trim();
 //                String priceEach = price;
 //                String totalPrice = finalPrice.getText().toString().trim().replace("Rs","");
@@ -218,6 +251,15 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
 
                 //add to db (SQLite)
                 addToCart(productId, title, price, String.valueOf(finalCost),String.valueOf(quantity));
+=======
+                String title = titleTv.getText().toString().trim();
+                String priceEach = price;
+                String totalPrice = finalPrice.getText().toString().trim().replace("$","");
+                String quantity = quantityTv.getText().toString().trim();
+
+                //add to db (SQLite)
+                addToCart(productId, title, priceEach, totalPrice,quantity);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 dialog.dismiss();
             }
         });
@@ -237,7 +279,11 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
                                 .addColumn("Item_Quantity", new String[]{"text", "not null"})
 
                         .doneTableColumn();
+<<<<<<< HEAD
         Boolean b = easyDB.addData("Item_Id", itemId)
+=======
+        Boolean b = easyDB.addData("ItemId", itemId)
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
                 .addData("Item_PID", productId)
                 .addData("Item_Name", title)
                 .addData("Item_Price_Each", priceEach)

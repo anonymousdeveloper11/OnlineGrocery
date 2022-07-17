@@ -70,7 +70,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         >
-
         <TextView
             android:id="@+id/priceDiscountTv"
             android:layout_width="wrap_content"
@@ -79,8 +78,8 @@
             android:padding="10dp"
             android:text="$10"
             android:textAlignment="textStart"
-            android:textColor="@color/colorBlack" />
-
+            android:textColor="@color/colorBlack"
+            />
         <TextView
             android:id="@+id/originalPriceTv"
             android:layout_width="wrap_content"
@@ -88,17 +87,19 @@
             android:padding="10dp"
             android:text="$12"
             android:textAlignment="textStart"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"
+            />
 
         <TextView
             android:id="@+id/finalPriceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:padding="10dp"
             android:text="Final price"
+            android:layout_alignParentEnd="true"
             android:textAlignment="textStart"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"
+            />
 
 
 

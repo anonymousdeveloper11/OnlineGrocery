@@ -174,9 +174,9 @@ public class OrderDetailsSellerActivity extends AppCompatActivity {
 
                         if(discount.equals("null") || discount.equals("0")){
                             //value is either null or 0
-                            discount ="& Discount Rs 0";
+                            discount ="& Discount $0";
                         } else {
-                            discount = "& Discount Rs "+discount;
+                            discount = "& Discount $"+discount;
                         }
                    //convert timestamp
                         Calendar  calendar = Calendar.getInstance();
@@ -196,7 +196,7 @@ public class OrderDetailsSellerActivity extends AppCompatActivity {
                         orderIdTv.setText(orderId);
                         orderStatusTv.setText(orderStatus);
                         dateTv.setText(dateFormat);
-                        amountTv.setText("Rs "+orderCost+"[Including delivery Fee Rs "+deliveryFee+ "" +discount+"]");
+                        amountTv.setText("$"+orderCost+"[Including delivery Fee $"+deliveryFee+ "" +discount+"]");
 
                         findAddress(latitude, longitude);
                     }

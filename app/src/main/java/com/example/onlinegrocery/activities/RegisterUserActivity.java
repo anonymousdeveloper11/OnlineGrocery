@@ -183,21 +183,17 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
         }
 
 
-//        if(longitude==0.0 || latitude==0.0){
-//            Toast.makeText(this, "Please tap GPS button to detect", Toast.LENGTH_SHORT).show();
-//            return;
-//
-//        }
+        if(longitude==0.0 || latitude==0.0){
+            Toast.makeText(this, "Please tap GPS button to detect", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(this, "Invalid Email address", Toast.LENGTH_SHORT).show();
             return;
 
         }
-        if(phoneNumber.length()<10){
-            Toast.makeText(this, "Please enter 10 digit phone Number", Toast.LENGTH_SHORT).show();
-        }
-
 
         if(password.length()<6){
             Toast.makeText(this, "Password must be atleast 6 characters ", Toast.LENGTH_SHORT).show();

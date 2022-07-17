@@ -58,8 +58,9 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
 
         //now got those values through intent on orderDetailsUsersActivity
         Intent intent = getIntent();
-        orderTo = intent.getStringExtra("OrderTo");//orderTo  contains uid of the shop where we placed
-        orderId = intent.getStringExtra("orderId");
+        orderId = intent.getStringExtra("orderTd");
+        orderTo = intent.getStringExtra("orderTo");//orderTo  contains uid of the shop where we placed
+
         loadShopInfo();
 
         loadOrderDetails();
@@ -121,9 +122,8 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
     private void loadOrderDetails() {
 
         //load order details
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(orderTo).child("Orders").child(orderId)
-                //.child("Items")
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(orderTo).child("Orders").child(orderId)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -141,9 +141,9 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
 
                         if(discount.equals("null") || discount.equals("0")){
                             //value is either null or 0
-                            discount ="& Discount Rs 0";
+                            discount ="& Discount $0";
                         } else {
-                            discount = "& Discount Rs "+discount;
+                            discount = "& Discount $"+discount;
                         }
 
                         //convert timestamp to proper format
@@ -161,7 +161,7 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
                         //set data
                         orderIdTv.setText(orderId);
                         orderStatusTv.setText(orderStatus);
-                        amountTv.setText("Rs "+orderCost+"[Including delivery Fee Rs"+deliveryFee+ "" +discount+"]");
+                        amountTv.setText("$"+orderCost+"[Including delivery Fee $"+deliveryFee+ "" +discount+"]");
                         dateTv.setText(formatDate);
                         findAddress(latitude, longitude);
                     }
@@ -196,8 +196,8 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
     private void loadShopInfo() {
 
         //get shop info
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.child(orderTo).addValueEventListener(new ValueEventListener() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(orderTo).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String shopName = ""+dataSnapshot.child("shopName").getValue();

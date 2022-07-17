@@ -64,8 +64,7 @@ public class AdapterShop extends RecyclerView.Adapter<AdapterShop.HolderShop>{
         String profileImage = modelShop.getProfileImage();
         String shopName = modelShop.getShopName();
 
-       // if(modelShop.)
-     //   loadReview(modelShop, holder);//load avg rating set to ratingbar
+        loadReview(modelShop, holder);//load avg rating set to ratingbar
         //set data
         holder.shopNameTv.setText(shopName);
         holder.phoneTv.setText(phone);
@@ -90,10 +89,10 @@ public class AdapterShop extends RecyclerView.Adapter<AdapterShop.HolderShop>{
             holder.shopClosedTv.setVisibility(View.VISIBLE);
         }
         try{
-            Picasso.get().load(profileImage).placeholder(R.drawable.store).into(holder.shopIv);
+            Picasso.get().load(profileImage).placeholder(R.drawable.ic_store).into(holder.shopIv);
 
         }catch (Exception e){
-            holder.shopIv.setImageResource(R.drawable.store);
+            holder.shopIv.setImageResource(R.drawable.ic_store);
 
         }
         //handle click listener show shop Details.
@@ -122,19 +121,12 @@ public class AdapterShop extends RecyclerView.Adapter<AdapterShop.HolderShop>{
                 //clear list before adding data into it
 
 
-
-//modelShop.ge
                 ratingSum=0;
                 for(DataSnapshot ds: dataSnapshot.getChildren());
+                float rating = Float.parseFloat(""+dataSnapshot.child("rating").getValue());
+                ratingSum = ratingSum+rating;//for avg rating add(additionalof)all ratings , laate will divide it by number of reviews
+                ModelReview modelReview = dataSnapshot.getValue(ModelReview.class);
 
-                if(dataSnapshot.child("rating" ) != null) {
-                    float rating = Float.parseFloat("" + dataSnapshot.child("rating").getValue());
-                    // if(rating != 0) {
-                    ratingSum = ratingSum + rating;//for avg rating add(additionalof)all ratings , laate will divide it by number of reviews
-                    //    }
-                }
-                    ModelReview modelReview = dataSnapshot.getValue(ModelReview.class);
-          //      }
                 //setup adapter
 
 

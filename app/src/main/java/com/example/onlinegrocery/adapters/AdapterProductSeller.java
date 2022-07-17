@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,10 +79,15 @@ public class AdapterProductSeller extends RecyclerView.Adapter<AdapterProductSel
         //set data
         holder.titleTv.setText(title);
         holder.quantityTv.setText(quality);
+<<<<<<< HEAD
         int dis = Integer.parseInt(originalPrice) - Integer.parseInt(discountPrice);
         holder.discountPriceTv.setText("Rs" +dis);
         holder.originalTv.setText("Rs" +originalPrice);
         holder.discountNoteTv.setText(discountNote);
+=======
+        holder.discountPriceTv.setText("$" +discountPrice);
+        holder.originalTv.setText("$" +originalPrice);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
         if(discountAvailable.equals("true")){
             //product is on discount
@@ -93,7 +101,10 @@ public class AdapterProductSeller extends RecyclerView.Adapter<AdapterProductSel
             holder.discountNoteTv.setVisibility(View.GONE);
         }
         try{
+<<<<<<< HEAD
             //holder.productIconIv.setImageURI(Uri.parse(icon));
+=======
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
             Picasso.get().load(icon).placeholder(R.drawable.ic_shopping_primary).into(holder.productIconIv);
 
         }catch (Exception e){
@@ -152,14 +163,23 @@ public class AdapterProductSeller extends RecyclerView.Adapter<AdapterProductSel
         categoryTv.setText(category);
         quantityTv.setText(quality);
         discountNoteTv.setText(discountNote);
+<<<<<<< HEAD
         discountNoteTv.setText("Rs" +discountNote);
         discountPriceTv.setText("Rs" +discountPrice);
+=======
+        discountNoteTv.setText("$" +discountNote);
+        discountPriceTv.setText("$" +discountPrice);
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
 
         if(discountAvailable.equals("true")){
             //product is on discount
            discountPriceTv.setVisibility(View.VISIBLE);
            discountNoteTv.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
            discountPriceTv.setPaintFlags(discountPriceTv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);//add strike through on original price
+=======
+            originalPriceTv.setPaintFlags(originalPriceTv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);//add strike through on original price
+>>>>>>> 2cf4e41d3aba7a84cc3c318166c75e0ec659342a
         }
         else{
             //product is not on discount
